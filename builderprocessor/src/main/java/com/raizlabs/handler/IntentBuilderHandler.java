@@ -3,6 +3,8 @@ package com.raizlabs.handler;
 import com.builder.core.IntentBuilder;
 import com.raizlabs.BuilderManager;
 import com.raizlabs.definition.IntentBuilderDefinition;
+import com.raizlabs.validator.IntentBuilderValidator;
+import com.raizlabs.validator.Validator;
 
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.TypeElement;
@@ -20,6 +22,14 @@ public class IntentBuilderHandler extends BaseHandler<IntentBuilder> {
 
     @Override
     protected void onProcessElement(TypeElement element, RoundEnvironment roundEnv, BuilderManager manager) {
+        IntentBuilderDefinition intentBuilderDefinition = new IntentBuilderDefinition(manager, element);
+
 
     }
+
+    @Override
+    protected Validator getValidator() {
+        return new IntentBuilderValidator();
+    }
+
 }
