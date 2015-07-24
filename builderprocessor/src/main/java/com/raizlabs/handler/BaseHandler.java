@@ -15,7 +15,6 @@ import javax.lang.model.element.TypeElement;
  */
 public abstract class BaseHandler<AnnotationClass extends Annotation> implements IHandler {
 
-
     /**
      * @return The annotation class to use.
      */
