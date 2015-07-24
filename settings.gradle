@@ -1,0 +1,1 @@
+include ':app', ':builderprocessor', ':builder', ':builder-core'
