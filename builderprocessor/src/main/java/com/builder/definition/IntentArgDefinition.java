@@ -49,6 +49,18 @@ public class IntentArgDefinition {
         return methodBuilder.build();
     }
 
+    public CodeBlock getInjectionCodeBlock() {
+        CodeBlock.Builder code = CodeBlock.builder();
+        code.add(CodeBlock
+                .builder()
+                .addStatement("$L.$L = ($T) $L.getExtras().get($S)",
+                        IntentBuilderDefinition.PARAM_OBJECT,
+                        variableName, elementType,
+                        IntentBuilderDefinition.PARAM_INTENT, key)
+                .build());
+        return code.build();
+    }
+
     private String getMethodName() {
         return "set" + (variableName.substring(0, 1).toUpperCase() + variableName.substring(1));
     }

@@ -17,7 +17,7 @@ public abstract class BaseDefinition implements TypeDefinition {
 
     protected BuilderManager manager;
 
-    protected TypeElement typeElement;
+    public TypeElement typeElement;
 
     public final ClassName elementClassName;
 
@@ -25,8 +25,8 @@ public abstract class BaseDefinition implements TypeDefinition {
 
     public BaseDefinition(BuilderManager manager, TypeElement typeElement) {
         this.manager = manager;
-        this.typeElement = typeElement;
         this.elementClassName = ClassName.get(typeElement);
+        this.typeElement = typeElement;
     }
 
     /**

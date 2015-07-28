@@ -1,11 +1,11 @@
-package com.builder;
+package com.builder.internal;
 
 import android.content.Intent;
 
 /**
  * Description: Holds common properties for the generated classes.
  */
-public abstract class BaseIntentBuilder {
+public abstract class BaseIntentBuilder<T> {
 
     protected Intent intent;
 
@@ -14,6 +14,12 @@ public abstract class BaseIntentBuilder {
             intent = new Intent();
         }
         return intent;
+    }
+
+    protected abstract Class<T> getTypeClass();
+
+    protected BaseIntentBuilder() {
+
     }
 
     /**
