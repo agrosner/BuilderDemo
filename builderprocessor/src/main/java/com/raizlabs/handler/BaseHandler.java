@@ -24,12 +24,21 @@ public abstract class BaseHandler<AnnotationClass extends Annotation> implements
      */
     protected abstract Class<AnnotationClass> getAnnotationClass();
 
+    /**
+     * @return true if this {@link BaseDefinition} subclass writes to a file. Not all subclasses
+     * write source files.
+     */
     protected boolean shouldWriteFile() {
         return true;
     }
 
     protected abstract Validator getValidator();
 
+    /**
+     * @param element The element of the class we're evaluating.
+     * @param manager The manager to use.
+     * @return A new instance of the {@link BaseDefinition} subclass.
+     */
     protected abstract BaseDefinition createDefinition(TypeElement element, BuilderManager manager);
 
     @Override
@@ -68,6 +77,12 @@ public abstract class BaseHandler<AnnotationClass extends Annotation> implements
         }
     }
 
+    /**
+     * Called after definition is validated.
+     *
+     * @param manager        The manager.
+     * @param baseDefinition The definition that was validated.
+     */
     protected void onValidated(BuilderManager manager, BaseDefinition baseDefinition) {
 
     }

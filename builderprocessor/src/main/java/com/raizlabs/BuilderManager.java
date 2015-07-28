@@ -1,5 +1,8 @@
 package com.raizlabs;
 
+import com.raizlabs.handler.IHandler;
+import com.raizlabs.handler.IntentBuilderHandler;
+
 import java.util.Set;
 
 import javax.annotation.processing.Filer;
@@ -15,6 +18,11 @@ public class BuilderManager {
 
     private ProcessingEnvironment environment;
 
+    // running array of handlers this manager passes the process call to.
+    private final IHandler[] handlers = new IHandler[]{
+            new IntentBuilderHandler()
+    };
+
     public BuilderManager(ProcessingEnvironment environment) {
         this.environment = environment;
     }
@@ -29,9 +37,13 @@ public class BuilderManager {
 
     /**
      * Called during the processor {@link BuilderProcessor#process(Set, RoundEnvironment)} method.
+     *
      * @param roundEnvironment The round environment currently we're on.
      */
     public void handle(RoundEnvironment roundEnvironment) {
-
+        // let the registered handlers run here.
+        for (IHandler handler : handlers) {
+            handler.handle(roundEnvironment, this);
+        }
     }
 }

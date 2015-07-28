@@ -42,9 +42,12 @@ public abstract class BaseDefinition implements TypeDefinition {
     public TypeSpec getTypeSpec() {
         TypeSpec.Builder typeBuilder = TypeSpec.classBuilder(outputClassName.simpleName())
                 .addModifiers(Modifier.PUBLIC, Modifier.FINAL)
-                .addSuperinterfaces(Arrays.asList(getImplementClasses()))
-                .superclass(getExtendsClass())
-                .addJavadoc("This is generated code. Please do not modify");
+                .addSuperinterfaces(Arrays.asList(getImplementClasses()));
+        TypeName extendsClass = getExtendsClass();
+        if (extendsClass != null) {
+            typeBuilder.superclass(extendsClass);
+        }
+        typeBuilder.addJavadoc("This is generated code. Please do not modify");
         onWriteDefinition(typeBuilder);
         return typeBuilder.build();
     }
@@ -60,7 +63,7 @@ public abstract class BaseDefinition implements TypeDefinition {
      * @return The classes that the generated class may implement.
      */
     protected TypeName[] getImplementClasses() {
-        return null;
+        return new TypeName[0];
     }
 
     /**

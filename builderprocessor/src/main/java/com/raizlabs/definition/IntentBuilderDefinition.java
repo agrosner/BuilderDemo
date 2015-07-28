@@ -13,6 +13,7 @@ public class IntentBuilderDefinition extends BaseDefinition {
 
     public IntentBuilderDefinition(BuilderManager manager, TypeElement typeElement) {
         super(manager, typeElement);
+        setOutputClassNamePostfix("_IntentBuilder");
     }
 
     @Override

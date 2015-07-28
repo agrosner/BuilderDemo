@@ -8,9 +8,12 @@ import java.lang.annotation.Target;
 /**
  * Description:
  */
-@Target(ElementType.TYPE)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.SOURCE)
 public @interface IntentArg {
 
+    /**
+     * @return The name of the intent argument.
+     */
     String key();
 }
