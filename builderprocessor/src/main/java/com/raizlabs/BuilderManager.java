@@ -9,6 +9,7 @@ import javax.annotation.processing.Filer;
 import javax.annotation.processing.ProcessingEnvironment;
 import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.Element;
+import javax.lang.model.util.Elements;
 
 /**
  * Description: The class that holds information that we need during processing. Such as the {@link Filer},
@@ -33,6 +34,10 @@ public class BuilderManager {
 
     public Filer getFiler() {
         return environment.getFiler();
+    }
+
+    public Elements getElementUtils() {
+        return environment.getElementUtils();
     }
 
     /**
