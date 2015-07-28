@@ -1,4 +1,4 @@
-package com.raizlabs.builder;
+package com.builder.builder;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,4 +1,4 @@
-package com.raizlabs.definition;
+package com.builder.definition;
 
 import com.squareup.javapoet.TypeSpec;
 

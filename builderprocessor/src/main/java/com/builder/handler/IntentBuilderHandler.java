@@ -1,11 +1,11 @@
-package com.raizlabs.handler;
+package com.builder.handler;
 
 import com.builder.core.IntentBuilder;
-import com.raizlabs.BuilderManager;
-import com.raizlabs.definition.BaseDefinition;
-import com.raizlabs.definition.IntentBuilderDefinition;
-import com.raizlabs.validator.IntentBuilderValidator;
-import com.raizlabs.validator.Validator;
+import com.builder.BuilderManager;
+import com.builder.definition.BaseDefinition;
+import com.builder.definition.IntentBuilderDefinition;
+import com.builder.validator.IntentBuilderValidator;
+import com.builder.validator.Validator;
 
 import javax.lang.model.element.TypeElement;
 

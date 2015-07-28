@@ -1,6 +1,6 @@
-package com.raizlabs.validator;
+package com.builder.validator;
 
-import com.raizlabs.BuilderManager;
+import com.builder.BuilderManager;
 
 /**
  * Description: Validates a class and throws errors if an annotation is used improperly.

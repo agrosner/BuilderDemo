@@ -1,6 +1,6 @@
-package com.raizlabs.definition;
+package com.builder.definition;
 
-import com.raizlabs.BuilderManager;
+import com.builder.BuilderManager;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;

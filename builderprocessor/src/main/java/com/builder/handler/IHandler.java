@@ -1,6 +1,6 @@
-package com.raizlabs.handler;
+package com.builder.handler;
 
-import com.raizlabs.BuilderManager;
+import com.builder.BuilderManager;
 
 import javax.annotation.processing.RoundEnvironment;
 

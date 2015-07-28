@@ -1,4 +1,4 @@
-package com.raizlabs;
+package com.builder;
 
 import com.builder.core.IntentBuilder;
 import com.google.auto.service.AutoService;

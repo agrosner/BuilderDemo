@@ -1,4 +1,4 @@
-package com.raizlabs.builder;
+package com.builder.builder;
 
 import android.content.Intent;
 import android.test.AndroidTestCase;

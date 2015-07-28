@@ -1,11 +1,11 @@
-package com.raizlabs.definition;
+package com.builder.definition;
 
 import com.builder.core.IntentArg;
 import com.builder.core.IntentBuilder;
 import com.google.common.collect.Lists;
-import com.raizlabs.BuilderManager;
-import com.raizlabs.TypeNames;
-import com.raizlabs.validator.IntentArgValidator;
+import com.builder.BuilderManager;
+import com.builder.TypeNames;
+import com.builder.validator.IntentArgValidator;
 import com.squareup.javapoet.TypeName;
 import com.squareup.javapoet.TypeSpec;
 

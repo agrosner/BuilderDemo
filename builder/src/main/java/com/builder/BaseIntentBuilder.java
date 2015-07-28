@@ -1,4 +1,4 @@
-package com.raizlabs.builder;
+package com.builder;
 
 import android.content.Intent;
 

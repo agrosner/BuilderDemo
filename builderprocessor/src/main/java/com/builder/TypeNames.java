@@ -1,4 +1,4 @@
-package com.raizlabs;
+package com.builder;
 
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.TypeName;

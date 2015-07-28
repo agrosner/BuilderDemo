@@ -1,8 +1,8 @@
-package com.raizlabs.handler;
+package com.builder.handler;
 
-import com.raizlabs.BuilderManager;
-import com.raizlabs.definition.BaseDefinition;
-import com.raizlabs.validator.Validator;
+import com.builder.BuilderManager;
+import com.builder.definition.BaseDefinition;
+import com.builder.validator.Validator;
 import com.squareup.javapoet.JavaFile;
 
 import java.io.IOException;

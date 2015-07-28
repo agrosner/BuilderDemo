@@ -1,7 +1,7 @@
-package com.raizlabs.definition;
+package com.builder.definition;
 
 import com.builder.core.IntentArg;
-import com.raizlabs.BuilderManager;
+import com.builder.BuilderManager;
 import com.squareup.javapoet.ClassName;
 import com.squareup.javapoet.CodeBlock;
 import com.squareup.javapoet.MethodSpec;

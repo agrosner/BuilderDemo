@@ -1,7 +1,7 @@
-package com.raizlabs;
+package com.builder;
 
-import com.raizlabs.handler.IHandler;
-import com.raizlabs.handler.IntentBuilderHandler;
+import com.builder.handler.IHandler;
+import com.builder.handler.IntentBuilderHandler;
 
 import java.util.Set;
 

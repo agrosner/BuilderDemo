@@ -1,7 +1,7 @@
-package com.raizlabs.validator;
+package com.builder.validator;
 
-import com.raizlabs.BuilderManager;
-import com.raizlabs.definition.IntentArgDefinition;
+import com.builder.BuilderManager;
+import com.builder.definition.IntentArgDefinition;
 
 /**
  * Description:
