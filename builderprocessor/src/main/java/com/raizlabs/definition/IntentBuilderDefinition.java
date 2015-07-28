@@ -1,5 +1,6 @@
 package com.raizlabs.definition;
 
+import com.builder.core.IntentArg;
 import com.builder.core.IntentBuilder;
 import com.google.common.collect.Lists;
 import com.raizlabs.BuilderManager;
@@ -31,9 +32,14 @@ public class IntentBuilderDefinition extends BaseDefinition {
         List<? extends Element> elements = manager.getElementUtils().getAllMembers(typeElement);
         IntentArgValidator intentArgValidator = new IntentArgValidator();
         for (Element element : elements) {
-            IntentArgDefinition definition = new IntentArgDefinition(manager, element);
-            if (intentArgValidator.isValid(manager, definition)) {
-                intentArgsList.add(definition);
+            IntentArg intentArg = element.getAnnotation(IntentArg.class);
+
+            // use annotation vs. if its a VariableElement.
+            if (intentArg != null) {
+                IntentArgDefinition definition = new IntentArgDefinition(manager, outputClassName, element);
+                if (intentArgValidator.isValid(manager, definition)) {
+                    intentArgsList.add(definition);
+                }
             }
         }
     }
@@ -42,7 +48,9 @@ public class IntentBuilderDefinition extends BaseDefinition {
     protected void onWriteDefinition(TypeSpec.Builder typeBuilder) {
         // here we add to the class.
 
-        
+        for (IntentArgDefinition intentArgDefinition : intentArgsList) {
+            typeBuilder.addMethod(intentArgDefinition.getIntentMethod());
+        }
     }
 
     @Override

@@ -9,6 +9,13 @@ public abstract class BaseIntentBuilder {
 
     protected Intent intent;
 
+    protected Intent getIntent() {
+        if (intent == null) {
+            intent = new Intent();
+        }
+        return intent;
+    }
+
     /**
      * @return The completed {@link Intent} object. Subsequently clears out the contained {@link Intent},
      * so we can reuse this object if needed.
