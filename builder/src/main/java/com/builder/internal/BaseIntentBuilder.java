@@ -1,5 +1,6 @@
 package com.builder.internal;
 
+import android.content.Context;
 import android.content.Intent;
 
 /**
@@ -26,8 +27,9 @@ public abstract class BaseIntentBuilder<T> {
      * @return The completed {@link Intent} object. Subsequently clears out the contained {@link Intent},
      * so we can reuse this object if needed.
      */
-    public Intent build() {
+    public Intent build(Context context) {
         Intent retIntent = intent;
+        retIntent.setClass(context, getTypeClass());
         intent = null;
         return retIntent;
     }
