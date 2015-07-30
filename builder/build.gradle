@@ -14,7 +14,6 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 }
@@ -23,6 +22,6 @@ dependencies {
     androidTestApt project(':builderprocessor')
     compile project(':builder-core')
 
-    compile "com.android.support:support-v4:22.2.1"
-    compile "com.android.support:appcompat-v7:22.2.1"
+    androidTestCompile "com.android.support:support-v4:22.2.1"
+    androidTestCompile "com.android.support:appcompat-v7:22.2.1"
 }
