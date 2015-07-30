@@ -21,6 +21,7 @@ import javax.annotation.processing.RoundEnvironment;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.util.Elements;
+import javax.tools.Diagnostic;
 
 /**
  * Description: The class that holds information that we need during processing. Such as the {@link Filer},
@@ -55,6 +56,10 @@ public class BuilderManager {
 
     public void addIntentBuilderForType(TypeName typeName, IntentBuilderDefinition intentBuilderDefinition) {
         intentBuilderDefinitionMap.put(typeName, intentBuilderDefinition);
+    }
+
+    public void logError(String error, Object...args) {
+        environment.getMessager().printMessage(Diagnostic.Kind.ERROR, String.format(error, args));
     }
 
     /**
